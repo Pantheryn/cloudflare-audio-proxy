@@ -38,7 +38,7 @@ export default {
 </head>
 <body>
   <div class="player-box">
-    <h1>自我使用说明音频</h1>
+    <h1>自用</h1>
     <audio controls autoplay>
       <source src="/audio" type="audio/wav">
       您的浏览器不支持音频播放

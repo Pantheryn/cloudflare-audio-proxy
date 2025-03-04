@@ -1,11 +1,13 @@
 export default {
   async fetch(request) {
     const url = new URL(request.url);
-    const path = url.pathname.slice(1); // 示例路径：yourname/repo/main/selfusing.wav
-    const ghRawUrl = `https://raw.githubusercontent.com/${path}`;
+    const path = url.pathname.slice(1); // 示例：Pantheryn/cloudflare-audio-proxy/main/selfusing.wav
+
+    // 调整后的 GitHub Raw URL
+    const ghRawUrl = `https://github.com/${path}/raw/refs/heads/main/selfusing.wav`;
 
     const response = await fetch(ghRawUrl, {
-      cf: { cacheTtl: 86400 } // 缓存24小时
+      cf: { cacheTtl: 86400 }
     });
 
     const newHeaders = new Headers(response.headers);
